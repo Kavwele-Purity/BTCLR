@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 
 #Data Loading
-filepath = '/Users/kavwelepurity/Documents/DEEP LEARNING/Breast Tumour Classfication Logistic Regression/DATASETS/WINSCONSIN2/data.csv'
+filepath = '~/Documents/DEEP LEARNING/Breast Tumour Classfication Logistic Regression/DATASETS/WINSCONSIN2/data.csv'
 df = pd.read_csv(filepath)
 
 print(df.head())
@@ -22,14 +22,14 @@ tumour_class = df['diagnosis'].value_counts()
 ax = sns.countplot(x=df['diagnosis'], palette="Set2")
 plt.title('Count of Malignant (M) vs Benign (B) Diagnoses')
 plt.xticks(ticks=[0, 1], labels=['Benign (B)', 'Malignant (M)'])
-plt.xlabel('Diagnosis')
+plt.xlabel('Diagnosis') 
 plt.ylabel('No. of Cases')
 for p in ax.patches:
     percentage = '{:.1f}%'.format(100 * p.get_height()/total)
     x = p.get_x() + p.get_width()/2
     y = p.get_height()
     ax.annotate(percentage, (x, y), ha='center', va='bottom')
-plt.show
+plt.show()
 
 #Data preparation
 df['diagnosis'] = df['diagnosis'].map({'M':1, 'B':0})

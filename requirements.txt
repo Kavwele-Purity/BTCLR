@@ -1,0 +1,13 @@
+For virtual environment package setup, refer to the requirements.text
+Command: pip3 list show
+matplotlib          3.9.2
+numpy               1.26.4
+pandas              2.2.3
+pip                 24.2
+pytorch-lightning   2.4.0
+scikit-learn        1.5.2
+seaborn             0.13.2
+torch               2.2.2
+torchaudio          2.2.2
+torchmetrics        1.5.0
+torchvision         0.17.2

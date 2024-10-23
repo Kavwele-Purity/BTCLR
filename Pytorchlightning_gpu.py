@@ -94,11 +94,10 @@ class LogRegression(pl.LightningModule):
 
 # Training
 model = LogRegression(X_train.shape[1])
-trainer = pl.Trainer(max_epochs=100)
+
+# Trainer Configuration for GPU
+trainer = pl.Trainer(max_epochs=100, gpus=1 if torch.cuda.is_available() else 0)
 trainer.fit(model)
 
 # Lightning Framework testing
-trainer.test(model)  #Call the test method to evaluate accuracy
-
-#pytorch manual testing config
-
+trainer.test(model)  #Test method to evaluate accuracy
